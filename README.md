@@ -27,13 +27,13 @@ password: Alessia1234
 --------------------
 username: luigi0
 password: Luigi1234
-...................
+--------------------
 username: giulia2
 password: Giulia1234
-...................
+--------------------
 username: maria22
 password: Maria1234
-...................
+--------------------
 
 ### 1. Clona il repository
 ```bash
