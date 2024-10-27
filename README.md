@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # User Image App
 
 ## Descrizione
