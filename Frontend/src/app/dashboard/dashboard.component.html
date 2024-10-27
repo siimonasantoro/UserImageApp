@@ -1,0 +1,38 @@
+<div class="custom-container">
+    <h2 class="text-center">Image Gallery</h2>
+  
+
+    <div *ngIf="statusMessage" class="alert alert-info" role="alert">
+      {{ statusMessage }}
+    </div>
+  
+    <form (ngSubmit)="uploadImage()" enctype="multipart/form-data" class="mb-4">
+      <div class="form-group">
+        <input type="file" (change)="onFileSelected($event)" class="form-control" />
+        <button type="submit" class="btn btn-primary">Carica Immagine</button>
+      </div>
+    </form>
+    <div class="form-group mb-4">
+      <input type="text" [(ngModel)]="searchTerm" placeholder="Cerca immagini" class="form-control" />
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-4 mb-4" *ngFor="let image of filteredImages">
+        <div class="card position-relative">
+          <img *ngIf="image.url" [src]="image.url" class="card-img-top img-fluid" alt="{{ image.filename }}" />
+          <div class="card-body">
+            <h5 class="card-title">{{ image.filename }}</h5>
+            <a [routerLink]="['/image-detail', image.id]" class="btn btn-info">Dettagli</a>
+            <button (click)="deleteImage(image.id)" class="btn btn-danger">Elimina</button>
+          </div>
+          <a [routerLink]="['/image-detail', image.id]" class="zoom-icon">
+            <i class="fas fa-search-plus"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="button-container mb-4 text-center">
+      <button (click)="logout()" class="btn btn-logout">Logout</button>
+      <a routerLink="/" class="btn btn-home">Torna alla Homepage</a>
+    </div>
+  </div>
+  

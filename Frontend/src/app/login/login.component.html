@@ -1,0 +1,28 @@
+<div class="container">
+  <a routerLink="/home">
+  </a>
+  <h2>Login</h2>
+  
+  <form (ngSubmit)="onSubmit()" #loginForm="ngForm" class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" [(ngModel)]="username" class="form-control" required>
+      
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" [(ngModel)]="password" class="form-control" required>
+
+      <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+
+      <div class="form-buttons">
+          <button type="submit" class="btn btn-primary" [disabled]="!username || !password">Login</button>
+      </div>
+  </form>
+
+  <div class="form-buttons">
+</div>
+
+  <div class="forgot-password">
+      <p><a routerLink="/forgot-password">Hai dimenticato la password?</a></p>
+    </div> 
+    Oppure
+ <a href="/home">torna sull'homepage</a>
+</div>

@@ -1,0 +1,11 @@
+<div *ngIf="image" class="image-detail-container">
+  <h2 class="image-title">{{ image.filename }}</h2>
+  <div class="image-container">
+    <img 
+      [src]="image.url" 
+      alt="{{ image.filename }}" 
+      class="img-fluid image-preview">
+  </div>
+  <p class="image-description">{{ image.description }}</p>
+  <button (click)="goBackToGallery()" class="btn btn-secondary back-button">Torna alla galleria</button>
+</div>
